@@ -45,7 +45,6 @@ namespace calc
 
 			mod = num;
 			if (num < 0) {
-				result = "-";
 				mod = Math.Abs (mod);
 			}
 
@@ -53,7 +52,10 @@ namespace calc
 				mod = Math.DivRem(mod, Base, out div);
 				result = DigitsSet[div] + result;
 			} while (mod != 0);
-
+				
+			if (num < 0) {
+				result = "-" + result;
+			}
 			return result;
 		}
 
