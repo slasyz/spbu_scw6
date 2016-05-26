@@ -128,7 +128,7 @@ public partial class MainWindow
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+		this.Title = global::Mono.Unix.Catalog.GetString ("Database Client");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		this.BorderWidth = ((uint)(10));
 		// Container child MainWindow.Gtk.Container+ContainerChild
@@ -142,8 +142,9 @@ public partial class MainWindow
 		this.buttonUpdate = new global::Gtk.Button ();
 		this.buttonUpdate.CanFocus = true;
 		this.buttonUpdate.Name = "buttonUpdate";
+		this.buttonUpdate.UseStock = true;
 		this.buttonUpdate.UseUnderline = true;
-		this.buttonUpdate.Label = global::Mono.Unix.Catalog.GetString ("Update from database");
+		this.buttonUpdate.Label = "gtk-refresh";
 		this.hbuttonboxMenu.Add (this.buttonUpdate);
 		global::Gtk.ButtonBox.ButtonBoxChild w1 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxMenu [this.buttonUpdate]));
 		w1.Expand = false;
@@ -189,8 +190,9 @@ public partial class MainWindow
 		this.buttonUserAdd = new global::Gtk.Button ();
 		this.buttonUserAdd.CanFocus = true;
 		this.buttonUserAdd.Name = "buttonUserAdd";
+		this.buttonUserAdd.UseStock = true;
 		this.buttonUserAdd.UseUnderline = true;
-		this.buttonUserAdd.Label = global::Mono.Unix.Catalog.GetString ("Add");
+		this.buttonUserAdd.Label = "gtk-add";
 		this.hbuttonboxUsers.Add (this.buttonUserAdd);
 		global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUsers [this.buttonUserAdd]));
 		w6.Expand = false;
@@ -199,8 +201,9 @@ public partial class MainWindow
 		this.buttonUserEdit = new global::Gtk.Button ();
 		this.buttonUserEdit.CanFocus = true;
 		this.buttonUserEdit.Name = "buttonUserEdit";
+		this.buttonUserEdit.UseStock = true;
 		this.buttonUserEdit.UseUnderline = true;
-		this.buttonUserEdit.Label = global::Mono.Unix.Catalog.GetString ("Edit");
+		this.buttonUserEdit.Label = "gtk-edit";
 		this.hbuttonboxUsers.Add (this.buttonUserEdit);
 		global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUsers [this.buttonUserEdit]));
 		w7.Position = 1;
@@ -366,8 +369,9 @@ public partial class MainWindow
 		this.buttonPostAdd = new global::Gtk.Button ();
 		this.buttonPostAdd.CanFocus = true;
 		this.buttonPostAdd.Name = "buttonPostAdd";
+		this.buttonPostAdd.UseStock = true;
 		this.buttonPostAdd.UseUnderline = true;
-		this.buttonPostAdd.Label = global::Mono.Unix.Catalog.GetString ("Add");
+		this.buttonPostAdd.Label = "gtk-add";
 		this.hbuttonboxPosts.Add (this.buttonPostAdd);
 		global::Gtk.ButtonBox.ButtonBoxChild w25 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostAdd]));
 		w25.Expand = false;
@@ -376,8 +380,9 @@ public partial class MainWindow
 		this.buttonPostEdit = new global::Gtk.Button ();
 		this.buttonPostEdit.CanFocus = true;
 		this.buttonPostEdit.Name = "buttonPostEdit";
+		this.buttonPostEdit.UseStock = true;
 		this.buttonPostEdit.UseUnderline = true;
-		this.buttonPostEdit.Label = global::Mono.Unix.Catalog.GetString ("Edit");
+		this.buttonPostEdit.Label = "gtk-edit";
 		this.hbuttonboxPosts.Add (this.buttonPostEdit);
 		global::Gtk.ButtonBox.ButtonBoxChild w26 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostEdit]));
 		w26.Position = 1;
@@ -562,8 +567,9 @@ public partial class MainWindow
 		this.buttonTagAdd = new global::Gtk.Button ();
 		this.buttonTagAdd.CanFocus = true;
 		this.buttonTagAdd.Name = "buttonTagAdd";
+		this.buttonTagAdd.UseStock = true;
 		this.buttonTagAdd.UseUnderline = true;
-		this.buttonTagAdd.Label = global::Mono.Unix.Catalog.GetString ("Add");
+		this.buttonTagAdd.Label = "gtk-add";
 		this.hbuttonboxTags.Add (this.buttonTagAdd);
 		global::Gtk.ButtonBox.ButtonBoxChild w47 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagAdd]));
 		w47.Expand = false;
@@ -572,8 +578,9 @@ public partial class MainWindow
 		this.buttonTagEdit = new global::Gtk.Button ();
 		this.buttonTagEdit.CanFocus = true;
 		this.buttonTagEdit.Name = "buttonTagEdit";
+		this.buttonTagEdit.UseStock = true;
 		this.buttonTagEdit.UseUnderline = true;
-		this.buttonTagEdit.Label = global::Mono.Unix.Catalog.GetString ("Edit");
+		this.buttonTagEdit.Label = "gtk-edit";
 		this.hbuttonboxTags.Add (this.buttonTagEdit);
 		global::Gtk.ButtonBox.ButtonBoxChild w48 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagEdit]));
 		w48.Position = 1;

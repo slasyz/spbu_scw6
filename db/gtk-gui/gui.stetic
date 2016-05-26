@@ -26,10 +26,11 @@
               <widget class="Gtk.Button" id="buttonUpdate">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">Update from database</property>
-                <property name="UseUnderline">True</property>
+                <property name="UseStock">True</property>
+                <property name="Type">StockItem</property>
+                <property name="StockId">gtk-refresh</property>
                 <signal name="Clicked" handler="OnButtonUpdateClicked" />
+                <property name="label">gtk-refresh</property>
               </widget>
               <packing>
                 <property name="Expand">False</property>
@@ -89,10 +90,11 @@
                       <widget class="Gtk.Button" id="buttonUserAdd">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Add</property>
-                        <property name="UseUnderline">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-add</property>
                         <signal name="Clicked" handler="OnButtonUserAddClicked" />
+                        <property name="label">gtk-add</property>
                       </widget>
                       <packing>
                         <property name="Expand">False</property>
@@ -103,10 +105,11 @@
                       <widget class="Gtk.Button" id="buttonUserEdit">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Edit</property>
-                        <property name="UseUnderline">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-edit</property>
                         <signal name="Clicked" handler="OnButtonUserEditClicked" />
+                        <property name="label">gtk-edit</property>
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -329,10 +332,11 @@
                       <widget class="Gtk.Button" id="buttonPostAdd">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Add</property>
-                        <property name="UseUnderline">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-add</property>
                         <signal name="Clicked" handler="OnButtonPostAddClicked" />
+                        <property name="label">gtk-add</property>
                       </widget>
                       <packing>
                         <property name="Expand">False</property>
@@ -343,10 +347,11 @@
                       <widget class="Gtk.Button" id="buttonPostEdit">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Edit</property>
-                        <property name="UseUnderline">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-edit</property>
                         <signal name="Clicked" handler="OnButtonPostEditClicked" />
+                        <property name="label">gtk-edit</property>
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -597,10 +602,11 @@
                       <widget class="Gtk.Button" id="buttonTagAdd">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Add</property>
-                        <property name="UseUnderline">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-add</property>
                         <signal name="Clicked" handler="OnButtonTagAddClicked" />
+                        <property name="label">gtk-add</property>
                       </widget>
                       <packing>
                         <property name="Expand">False</property>
@@ -611,10 +617,11 @@
                       <widget class="Gtk.Button" id="buttonTagEdit">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="Type">TextOnly</property>
-                        <property name="Label" translatable="yes">Edit</property>
-                        <property name="UseUnderline">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-edit</property>
                         <signal name="Clicked" handler="OnButtonTagEditClicked" />
+                        <property name="label">gtk-edit</property>
                       </widget>
                       <packing>
                         <property name="Position">1</property>
