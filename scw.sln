@@ -3,18 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "atm", "atm\atm.csproj", "{F8972301-0421-4591-BA52-25FD9EFC0AF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calc", "calc\calc.csproj", "{CDC76FA3-B1D6-4FFE-ADBC-E1C8B557FC3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "db", "db\db.csproj", "{BB665DB1-F5BE-451C-B65E-255ACEFCCAFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB665DB1-F5BE-451C-B65E-255ACEFCCAFA}.Debug|x86.ActiveCfg = Debug|x86
+		{BB665DB1-F5BE-451C-B65E-255ACEFCCAFA}.Debug|x86.Build.0 = Debug|x86
+		{BB665DB1-F5BE-451C-B65E-255ACEFCCAFA}.Release|x86.ActiveCfg = Release|x86
+		{BB665DB1-F5BE-451C-B65E-255ACEFCCAFA}.Release|x86.Build.0 = Release|x86
+		{CDC76FA3-B1D6-4FFE-ADBC-E1C8B557FC3F}.Debug|x86.ActiveCfg = Debug|x86
+		{CDC76FA3-B1D6-4FFE-ADBC-E1C8B557FC3F}.Debug|x86.Build.0 = Debug|x86
+		{CDC76FA3-B1D6-4FFE-ADBC-E1C8B557FC3F}.Release|x86.ActiveCfg = Release|x86
+		{CDC76FA3-B1D6-4FFE-ADBC-E1C8B557FC3F}.Release|x86.Build.0 = Release|x86
 		{F8972301-0421-4591-BA52-25FD9EFC0AF9}.Debug|x86.ActiveCfg = Debug|x86
 		{F8972301-0421-4591-BA52-25FD9EFC0AF9}.Debug|x86.Build.0 = Debug|x86
 		{F8972301-0421-4591-BA52-25FD9EFC0AF9}.Release|x86.ActiveCfg = Release|x86
 		{F8972301-0421-4591-BA52-25FD9EFC0AF9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = atm\atm.csproj
+		StartupItems = $0
+		$0.Item = atm\atm.csproj
+		$0.Item = calc\calc.csproj
 	EndGlobalSection
 EndGlobal
