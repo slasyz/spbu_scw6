@@ -1,15 +1,16 @@
-﻿<Properties StartupItem="db/db.csproj">
+﻿<Properties StartupItem="calc/calc.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="db/MainWindow.cs">
     <Files>
-      <File FileName="db/MainWindow.cs" Line="166" Column="3" />
-      <File FileName="db/Program.cs" Line="16" Column="2" />
+      <File FileName="db/MainWindow.cs" Line="78" Column="3" />
+      <File FileName="db/Program.cs" Line="14" Column="4" />
       <File FileName="db/Nodes.cs" Line="31" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="scw" expanded="True">
+            <Node name="calc" expanded="True" />
             <Node name="db" expanded="True">
               <Node name="References" expanded="True" />
               <Node name="MainWindow.cs" selected="True" />

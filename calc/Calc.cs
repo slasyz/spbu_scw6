@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace calc
 {
@@ -59,73 +60,74 @@ namespace calc
 			return result;
 		}
 
-		public static string GetResult(string num1, string num2, char op) {
-			int decNum1 = ToDec(num1);
-			int decNum2 = ToDec(num2);
+		public static string GetResult(string line) {
+			string lineOld = line;
+			Regex expr = new Regex(@"(\-?\d+)\s*([+*/-])\s*(\-?\d+)");
+			Regex brackets = new Regex(@"\(\s*(-?\d+)\d*\s*\)");
+			string numStr = String.Format (@"^-?[{0}]+$", DigitsSet);
+			Regex num = new Regex (numStr);
 
-			switch (op) {
-			case '+':
-				return FromDec(decNum1 + decNum2);
-			case '-':
-				return FromDec(decNum1 - decNum2);
-			case '*':
-				return FromDec(decNum1 * decNum2);
-			case '/':
-				return FromDec(decNum1 / decNum2);
-			case '%':
-				return FromDec(decNum1 % decNum2);
-			default:
-				throw new InvalidOperatorException ();
-			}
-		}
+			do {
+				lineOld = line;
 
-		public static void ParseInput(string line, out string num1, out string num2, out char op) {
-			string[] lineSplit;
-			lineSplit = line.Split (null);
+				// Replace "123 + 321" occurence to evaluated result
+				line = expr.Replace(line, delegate(Match match) {
+					int n1, n2;
+					char op;
 
-			if (lineSplit.Length != 3)
-				throw new InvalidInputException ();
+					n1 = ToDec(match.Groups[1].ToString());
+					op = match.Groups[2].ToString()[0];
+					n2 = ToDec(match.Groups[3].ToString());
 
-			if (lineSplit [1].Length != 1)
-				throw new InvalidInputException ();
+					Console.WriteLine("[debug] Calculate '{0}' '{1}' '{2}'", n1, op, n2);
 
-			num1 = lineSplit [0];
-			num2 = lineSplit [2];
-			op = lineSplit [1] [0];
+					switch (op) {
+					case '+':
+						return FromDec(n1 + n2);
+					case '-':
+						return FromDec(n1 - n2);
+					case '*':
+						return FromDec(n1 * n2);
+					case '/':
+						return FromDec(n1 / n2);
+					default:
+						throw new Exception();
+					}
+				});
+
+				Console.WriteLine("[debug] Result is '{0}'", line);
+
+				// Replace "(123)" to "123"
+				line = brackets.Replace(line, "$1");
+
+				// Result
+				if (num.Match(line).Success)
+					return line;
+				else {
+					Console.WriteLine("[debug] '{0} is not a number, so continue", line);
+				}
+			} while (lineOld != line);
+
+			throw new InvalidInputException ();
 		}
 
 		public static int Main (string[] args)
 		{
 			string line;
-			string num1, num2;
-			char op;
 			string result;
 
 			while (true) {
-				Console.Write("Введите выражение вида \"A B C\", где:\n" +
-					"    A и C - числа в {0}-ичной системе счисления\n" +
-					"    B - оператор: +, -, *, / или %\n" +
-					"> ", Base);
+				Console.Write("> ", Base);
 				line = Console.ReadLine ();
 
 				try {
-					ParseInput (line, out num1, out num2, out op);
+					result = GetResult (line);
+					Console.WriteLine ("Ответ: {0}\n", result);
 				} catch (InvalidInputException ex) {
-					Console.WriteLine ("Неверный формат ввода");
-					continue;
-				} catch (InvalidNumberException ex) {
-					Console.WriteLine ("Неверный формат числа");
-					continue;
+					Console.WriteLine ("Invalid input");
+				} catch (DivideByZeroException ex) {
+					Console.WriteLine ("Division by zero");
 				}
-
-				try {
-					result = GetResult (num1, num2, op);
-				} catch (InvalidOperatorException ex) {
-					Console.WriteLine ("Неверный оператор, должен быть: +, -, *, / или %");
-					continue;
-				}
-
-				Console.WriteLine ("Ответ: {0}\n", result);
 			}
 		}
 	}
