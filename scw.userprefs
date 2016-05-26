@@ -2,10 +2,21 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="db/MainWindow.cs">
     <Files>
-      <File FileName="db/MainWindow.cs" Line="3" Column="1" />
-      <File FileName="db/gtk-gui/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="db/MainWindow.cs" Line="166" Column="3" />
+      <File FileName="db/Program.cs" Line="16" Column="2" />
+      <File FileName="db/Nodes.cs" Line="31" Column="24" />
     </Files>
     <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="scw" expanded="True">
+            <Node name="db" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="MainWindow.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
       <Pad Id="ClassPad">
         <State name="__root__">
           <Node name="scw" expanded="True" selected="True">
@@ -15,6 +26,11 @@
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="scw" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

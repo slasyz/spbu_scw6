@@ -73,8 +73,6 @@ public partial class MainWindow: Gtk.Window
 			string username = (string) reader["username"];
 			string email = (string) reader["email"];
 
-			Console.WriteLine ("[{0}] {1} {2}", id, username, email);
-
 			nodeviewUsers.NodeStore.AddNode (new UserNode (id, username, email));
 		}
 
@@ -217,7 +215,11 @@ public partial class MainWindow: Gtk.Window
 
 	public void SetPostTags(long id, string tags)
 	{
-		List<string> tagsList = new List<string>(tags.Split(','));
+		List<string> tagsList;
+		if (tags == "")
+			tagsList = new List<string> ();
+		else
+			tagsList = new List<string> (tags.Split(','));
 		HashSet<string> tagsHash = new HashSet<string> (tagsList);
 		long tagID;
 
@@ -235,13 +237,29 @@ public partial class MainWindow: Gtk.Window
 				dbcmd.ExecuteNonQuery ();
 			}
 		}
-
 	}
 
 	public void SetPostTags(string id, string tags)
 	{
 		SetPostTags (int.Parse (id), tags);
 		return;
+	}
+
+	public int GetAuthorPostsCount(int id)
+	{
+		MySqlCommand dbcmd = new MySqlCommand();
+		dbcmd.Connection = DBCon;
+
+		dbcmd.CommandText = "SELECT COUNT(*) FROM posts WHERE (author_id = @author_id)";
+		dbcmd.Prepare ();
+		dbcmd.Parameters.AddWithValue ("@author_id", id);
+
+		return int.Parse(Convert.ToString(dbcmd.ExecuteScalar()));
+	}
+
+	public int GetAuthorPostsCount(string id)
+	{
+		return int.Parse(id);
 	}
 
 	protected void OnButtonUserAddClicked (object sender, EventArgs e)
@@ -474,6 +492,100 @@ public partial class MainWindow: Gtk.Window
 			} catch (MySqlException ex) {
 				Console.WriteLine("Error: {0}",  ex.ToString());
 			}
+		}
+	}
+
+	protected void OnButtonUserDeleteClicked (object sender, EventArgs e)
+	{
+		UserNode selected = (UserNode) nodeviewUsers.NodeSelection.SelectedNode;
+		if (selected == null)
+			return;
+		
+		MySqlCommand dbcmd = new MySqlCommand();
+		dbcmd.Connection = DBCon;
+
+		if (GetAuthorPostsCount (selected.UserID) > 0)
+			return; // TODO: error reporting
+
+		try {
+			dbcmd.CommandText = "DELETE FROM users WHERE (id = @id)";
+			dbcmd.Prepare ();
+			dbcmd.Parameters.AddWithValue ("@id", selected.UserID);
+			dbcmd.ExecuteNonQuery ();
+
+			DatabaseUpdate();
+		} catch (MySqlException ex) {
+			Console.WriteLine("Error: {0}",  ex.ToString());
+		}
+	}
+
+	protected void OnButtonPostDeleteClicked (object sender, EventArgs e)
+	{
+		PostNode selected = (PostNode) nodeviewPosts.NodeSelection.SelectedNode;
+		if (selected == null)
+			return;
+
+		// Delete post-tag connections to this post
+		MySqlCommand dbcmd = new MySqlCommand();
+		dbcmd.Connection = DBCon;
+		try {
+			dbcmd.CommandText = "DELETE FROM posts_tags WHERE (post_id = @id)";
+			dbcmd.Prepare ();
+			dbcmd.Parameters.AddWithValue ("@id", selected.PostID);
+			dbcmd.ExecuteNonQuery ();
+
+			DatabaseUpdate();
+		} catch (MySqlException ex) {
+			Console.WriteLine("Error: {0}",  ex.ToString());
+		}
+
+		// Delete this post
+
+		dbcmd = new MySqlCommand();
+		dbcmd.Connection = DBCon;
+		try {
+			dbcmd.CommandText = "DELETE FROM posts WHERE (id = @id)";
+			dbcmd.Prepare ();
+			dbcmd.Parameters.AddWithValue ("@id", selected.PostID);
+			dbcmd.ExecuteNonQuery ();
+
+			DatabaseUpdate();
+		} catch (MySqlException ex) {
+			Console.WriteLine("Error: {0}",  ex.ToString());
+		}
+	}
+
+	protected void OnButtonTagDeleteClicked (object sender, EventArgs e)
+	{
+		TagNode selected = (TagNode) nodeviewTags.NodeSelection.SelectedNode;
+		if (selected == null)
+			return;
+
+		// Delete post-tag connections to this tag
+		MySqlCommand dbcmd = new MySqlCommand();
+		dbcmd.Connection = DBCon;
+		try {
+			dbcmd.CommandText = "DELETE FROM posts_tags WHERE (tag_id = @id)";
+			dbcmd.Prepare ();
+			dbcmd.Parameters.AddWithValue ("@id", selected.TagID);
+			dbcmd.ExecuteNonQuery ();
+
+			DatabaseUpdate();
+		} catch (MySqlException ex) {
+			Console.WriteLine("Error: {0}",  ex.ToString());
+		}
+			
+		dbcmd = new MySqlCommand();
+		dbcmd.Connection = DBCon;
+		try {
+			dbcmd.CommandText = "DELETE FROM tags WHERE (id = @id)";
+			dbcmd.Prepare ();
+			dbcmd.Parameters.AddWithValue ("@id", selected.TagID);
+			dbcmd.ExecuteNonQuery ();
+
+			DatabaseUpdate();
+		} catch (MySqlException ex) {
+			Console.WriteLine("Error: {0}",  ex.ToString());
 		}
 	}
 }

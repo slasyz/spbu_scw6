@@ -85,7 +85,7 @@
                 <child>
                   <widget class="Gtk.HButtonBox" id="hbuttonboxUsers">
                     <property name="MemberName" />
-                    <property name="Size">2</property>
+                    <property name="Size">3</property>
                     <child>
                       <widget class="Gtk.Button" id="buttonUserAdd">
                         <property name="MemberName" />
@@ -113,6 +113,22 @@
                       </widget>
                       <packing>
                         <property name="Position">1</property>
+                        <property name="Expand">False</property>
+                        <property name="Fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="buttonUserDelete">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-delete</property>
+                        <signal name="Clicked" handler="OnButtonUserDeleteClicked" />
+                        <property name="label">gtk-delete</property>
+                      </widget>
+                      <packing>
+                        <property name="Position">2</property>
                         <property name="Expand">False</property>
                         <property name="Fill">False</property>
                       </packing>
@@ -327,7 +343,7 @@
                 <child>
                   <widget class="Gtk.HButtonBox" id="hbuttonboxPosts">
                     <property name="MemberName" />
-                    <property name="Size">2</property>
+                    <property name="Size">3</property>
                     <child>
                       <widget class="Gtk.Button" id="buttonPostAdd">
                         <property name="MemberName" />
@@ -355,6 +371,22 @@
                       </widget>
                       <packing>
                         <property name="Position">1</property>
+                        <property name="Expand">False</property>
+                        <property name="Fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="buttonPostDelete">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-delete</property>
+                        <signal name="Clicked" handler="OnButtonPostDeleteClicked" />
+                        <property name="label">gtk-delete</property>
+                      </widget>
+                      <packing>
+                        <property name="Position">2</property>
                         <property name="Expand">False</property>
                         <property name="Fill">False</property>
                       </packing>
@@ -597,7 +629,7 @@
                 <child>
                   <widget class="Gtk.HButtonBox" id="hbuttonboxTags">
                     <property name="MemberName" />
-                    <property name="Size">2</property>
+                    <property name="Size">3</property>
                     <child>
                       <widget class="Gtk.Button" id="buttonTagAdd">
                         <property name="MemberName" />
@@ -625,6 +657,22 @@
                       </widget>
                       <packing>
                         <property name="Position">1</property>
+                        <property name="Expand">False</property>
+                        <property name="Fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="buttonTagDelete">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="UseStock">True</property>
+                        <property name="Type">StockItem</property>
+                        <property name="StockId">gtk-delete</property>
+                        <signal name="Clicked" handler="OnButtonTagDeleteClicked" />
+                        <property name="label">gtk-delete</property>
+                      </widget>
+                      <packing>
+                        <property name="Position">2</property>
                         <property name="Expand">False</property>
                         <property name="Fill">False</property>
                       </packing>

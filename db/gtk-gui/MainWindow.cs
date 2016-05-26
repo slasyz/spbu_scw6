@@ -25,6 +25,8 @@ public partial class MainWindow
 	
 	private global::Gtk.Button buttonUserEdit;
 	
+	private global::Gtk.Button buttonUserDelete;
+	
 	private global::Gtk.VBox vboxUserEdit;
 	
 	private global::Gtk.Label labelID;
@@ -62,6 +64,8 @@ public partial class MainWindow
 	private global::Gtk.Button buttonPostAdd;
 	
 	private global::Gtk.Button buttonPostEdit;
+	
+	private global::Gtk.Button buttonPostDelete;
 	
 	private global::Gtk.VBox vboxPostEdit;
 	
@@ -106,6 +110,8 @@ public partial class MainWindow
 	private global::Gtk.Button buttonTagAdd;
 	
 	private global::Gtk.Button buttonTagEdit;
+	
+	private global::Gtk.Button buttonTagDelete;
 	
 	private global::Gtk.VBox vboxTagEdit;
 	
@@ -209,11 +215,23 @@ public partial class MainWindow
 		w7.Position = 1;
 		w7.Expand = false;
 		w7.Fill = false;
-		this.vboxUsers.Add (this.hbuttonboxUsers);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vboxUsers [this.hbuttonboxUsers]));
+		// Container child hbuttonboxUsers.Gtk.ButtonBox+ButtonBoxChild
+		this.buttonUserDelete = new global::Gtk.Button ();
+		this.buttonUserDelete.CanFocus = true;
+		this.buttonUserDelete.Name = "buttonUserDelete";
+		this.buttonUserDelete.UseStock = true;
+		this.buttonUserDelete.UseUnderline = true;
+		this.buttonUserDelete.Label = "gtk-delete";
+		this.hbuttonboxUsers.Add (this.buttonUserDelete);
+		global::Gtk.ButtonBox.ButtonBoxChild w8 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUsers [this.buttonUserDelete]));
 		w8.Position = 2;
 		w8.Expand = false;
 		w8.Fill = false;
+		this.vboxUsers.Add (this.hbuttonboxUsers);
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vboxUsers [this.hbuttonboxUsers]));
+		w9.Position = 2;
+		w9.Expand = false;
+		w9.Fill = false;
 		// Container child vboxUsers.Gtk.Box+BoxChild
 		this.vboxUserEdit = new global::Gtk.VBox ();
 		this.vboxUserEdit.Name = "vboxUserEdit";
@@ -223,10 +241,10 @@ public partial class MainWindow
 		this.labelID.Name = "labelID";
 		this.labelID.LabelProp = global::Mono.Unix.Catalog.GetString ("ID");
 		this.vboxUserEdit.Add (this.labelID);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelID]));
-		w9.Position = 0;
-		w9.Expand = false;
-		w9.Fill = false;
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelID]));
+		w10.Position = 0;
+		w10.Expand = false;
+		w10.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.entryUserEditID = new global::Gtk.Entry ();
 		this.entryUserEditID.CanFocus = true;
@@ -234,19 +252,19 @@ public partial class MainWindow
 		this.entryUserEditID.IsEditable = false;
 		this.entryUserEditID.InvisibleChar = '●';
 		this.vboxUserEdit.Add (this.entryUserEditID);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditID]));
-		w10.Position = 1;
-		w10.Expand = false;
-		w10.Fill = false;
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditID]));
+		w11.Position = 1;
+		w11.Expand = false;
+		w11.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.labelUsername = new global::Gtk.Label ();
 		this.labelUsername.Name = "labelUsername";
 		this.labelUsername.LabelProp = global::Mono.Unix.Catalog.GetString ("Username");
 		this.vboxUserEdit.Add (this.labelUsername);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelUsername]));
-		w11.Position = 2;
-		w11.Expand = false;
-		w11.Fill = false;
+		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelUsername]));
+		w12.Position = 2;
+		w12.Expand = false;
+		w12.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.entryUserEditUsername = new global::Gtk.Entry ();
 		this.entryUserEditUsername.CanFocus = true;
@@ -254,19 +272,19 @@ public partial class MainWindow
 		this.entryUserEditUsername.IsEditable = true;
 		this.entryUserEditUsername.InvisibleChar = '●';
 		this.vboxUserEdit.Add (this.entryUserEditUsername);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditUsername]));
-		w12.Position = 3;
-		w12.Expand = false;
-		w12.Fill = false;
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditUsername]));
+		w13.Position = 3;
+		w13.Expand = false;
+		w13.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.labelEmail = new global::Gtk.Label ();
 		this.labelEmail.Name = "labelEmail";
 		this.labelEmail.LabelProp = global::Mono.Unix.Catalog.GetString ("E-mail");
 		this.vboxUserEdit.Add (this.labelEmail);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelEmail]));
-		w13.Position = 4;
-		w13.Expand = false;
-		w13.Fill = false;
+		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelEmail]));
+		w14.Position = 4;
+		w14.Expand = false;
+		w14.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.entryUserEditEmail = new global::Gtk.Entry ();
 		this.entryUserEditEmail.CanFocus = true;
@@ -274,19 +292,19 @@ public partial class MainWindow
 		this.entryUserEditEmail.IsEditable = true;
 		this.entryUserEditEmail.InvisibleChar = '●';
 		this.vboxUserEdit.Add (this.entryUserEditEmail);
-		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditEmail]));
-		w14.Position = 5;
-		w14.Expand = false;
-		w14.Fill = false;
+		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditEmail]));
+		w15.Position = 5;
+		w15.Expand = false;
+		w15.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.labelPassword = new global::Gtk.Label ();
 		this.labelPassword.Name = "labelPassword";
 		this.labelPassword.LabelProp = global::Mono.Unix.Catalog.GetString ("Password");
 		this.vboxUserEdit.Add (this.labelPassword);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelPassword]));
-		w15.Position = 6;
-		w15.Expand = false;
-		w15.Fill = false;
+		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.labelPassword]));
+		w16.Position = 6;
+		w16.Expand = false;
+		w16.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.entryUserEditPassword = new global::Gtk.Entry ();
 		this.entryUserEditPassword.CanFocus = true;
@@ -294,10 +312,10 @@ public partial class MainWindow
 		this.entryUserEditPassword.IsEditable = true;
 		this.entryUserEditPassword.InvisibleChar = '●';
 		this.vboxUserEdit.Add (this.entryUserEditPassword);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditPassword]));
-		w16.Position = 7;
-		w16.Expand = false;
-		w16.Fill = false;
+		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.entryUserEditPassword]));
+		w17.Position = 7;
+		w17.Expand = false;
+		w17.Fill = false;
 		// Container child vboxUserEdit.Gtk.Box+BoxChild
 		this.hbuttonboxUserEdit = new global::Gtk.HButtonBox ();
 		this.hbuttonboxUserEdit.Name = "hbuttonboxUserEdit";
@@ -309,9 +327,9 @@ public partial class MainWindow
 		this.buttonUserEditCancel.UseUnderline = true;
 		this.buttonUserEditCancel.Label = "gtk-cancel";
 		this.hbuttonboxUserEdit.Add (this.buttonUserEditCancel);
-		global::Gtk.ButtonBox.ButtonBoxChild w17 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUserEdit [this.buttonUserEditCancel]));
-		w17.Expand = false;
-		w17.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w18 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUserEdit [this.buttonUserEditCancel]));
+		w18.Expand = false;
+		w18.Fill = false;
 		// Container child hbuttonboxUserEdit.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonUserEditOK = new global::Gtk.Button ();
 		this.buttonUserEditOK.CanFocus = true;
@@ -320,23 +338,23 @@ public partial class MainWindow
 		this.buttonUserEditOK.UseUnderline = true;
 		this.buttonUserEditOK.Label = "gtk-ok";
 		this.hbuttonboxUserEdit.Add (this.buttonUserEditOK);
-		global::Gtk.ButtonBox.ButtonBoxChild w18 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUserEdit [this.buttonUserEditOK]));
-		w18.Position = 1;
-		w18.Expand = false;
-		w18.Fill = false;
-		this.vboxUserEdit.Add (this.hbuttonboxUserEdit);
-		global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.hbuttonboxUserEdit]));
-		w19.Position = 8;
+		global::Gtk.ButtonBox.ButtonBoxChild w19 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxUserEdit [this.buttonUserEditOK]));
+		w19.Position = 1;
 		w19.Expand = false;
 		w19.Fill = false;
-		this.vboxUsers.Add (this.vboxUserEdit);
-		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vboxUsers [this.vboxUserEdit]));
-		w20.Position = 3;
+		this.vboxUserEdit.Add (this.hbuttonboxUserEdit);
+		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.vboxUserEdit [this.hbuttonboxUserEdit]));
+		w20.Position = 8;
 		w20.Expand = false;
 		w20.Fill = false;
+		this.vboxUsers.Add (this.vboxUserEdit);
+		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vboxUsers [this.vboxUserEdit]));
+		w21.Position = 3;
+		w21.Expand = false;
+		w21.Fill = false;
 		this.hbox1.Add (this.vboxUsers);
-		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vboxUsers]));
-		w21.Position = 0;
+		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vboxUsers]));
+		w22.Position = 0;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.vboxPosts = new global::Gtk.VBox ();
 		this.vboxPosts.Name = "vboxPosts";
@@ -346,10 +364,10 @@ public partial class MainWindow
 		this.labelPosts.Name = "labelPosts";
 		this.labelPosts.LabelProp = global::Mono.Unix.Catalog.GetString ("Posts");
 		this.vboxPosts.Add (this.labelPosts);
-		global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.labelPosts]));
-		w22.Position = 0;
-		w22.Expand = false;
-		w22.Fill = false;
+		global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.labelPosts]));
+		w23.Position = 0;
+		w23.Expand = false;
+		w23.Fill = false;
 		// Container child vboxPosts.Gtk.Box+BoxChild
 		this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
@@ -360,8 +378,8 @@ public partial class MainWindow
 		this.nodeviewPosts.Name = "nodeviewPosts";
 		this.GtkScrolledWindow1.Add (this.nodeviewPosts);
 		this.vboxPosts.Add (this.GtkScrolledWindow1);
-		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.GtkScrolledWindow1]));
-		w24.Position = 1;
+		global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.GtkScrolledWindow1]));
+		w25.Position = 1;
 		// Container child vboxPosts.Gtk.Box+BoxChild
 		this.hbuttonboxPosts = new global::Gtk.HButtonBox ();
 		this.hbuttonboxPosts.Name = "hbuttonboxPosts";
@@ -373,9 +391,9 @@ public partial class MainWindow
 		this.buttonPostAdd.UseUnderline = true;
 		this.buttonPostAdd.Label = "gtk-add";
 		this.hbuttonboxPosts.Add (this.buttonPostAdd);
-		global::Gtk.ButtonBox.ButtonBoxChild w25 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostAdd]));
-		w25.Expand = false;
-		w25.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w26 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostAdd]));
+		w26.Expand = false;
+		w26.Fill = false;
 		// Container child hbuttonboxPosts.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonPostEdit = new global::Gtk.Button ();
 		this.buttonPostEdit.CanFocus = true;
@@ -384,15 +402,27 @@ public partial class MainWindow
 		this.buttonPostEdit.UseUnderline = true;
 		this.buttonPostEdit.Label = "gtk-edit";
 		this.hbuttonboxPosts.Add (this.buttonPostEdit);
-		global::Gtk.ButtonBox.ButtonBoxChild w26 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostEdit]));
-		w26.Position = 1;
-		w26.Expand = false;
-		w26.Fill = false;
-		this.vboxPosts.Add (this.hbuttonboxPosts);
-		global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.hbuttonboxPosts]));
-		w27.Position = 2;
+		global::Gtk.ButtonBox.ButtonBoxChild w27 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostEdit]));
+		w27.Position = 1;
 		w27.Expand = false;
 		w27.Fill = false;
+		// Container child hbuttonboxPosts.Gtk.ButtonBox+ButtonBoxChild
+		this.buttonPostDelete = new global::Gtk.Button ();
+		this.buttonPostDelete.CanFocus = true;
+		this.buttonPostDelete.Name = "buttonPostDelete";
+		this.buttonPostDelete.UseStock = true;
+		this.buttonPostDelete.UseUnderline = true;
+		this.buttonPostDelete.Label = "gtk-delete";
+		this.hbuttonboxPosts.Add (this.buttonPostDelete);
+		global::Gtk.ButtonBox.ButtonBoxChild w28 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPosts [this.buttonPostDelete]));
+		w28.Position = 2;
+		w28.Expand = false;
+		w28.Fill = false;
+		this.vboxPosts.Add (this.hbuttonboxPosts);
+		global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.hbuttonboxPosts]));
+		w29.Position = 2;
+		w29.Expand = false;
+		w29.Fill = false;
 		// Container child vboxPosts.Gtk.Box+BoxChild
 		this.vboxPostEdit = new global::Gtk.VBox ();
 		this.vboxPostEdit.Name = "vboxPostEdit";
@@ -402,10 +432,10 @@ public partial class MainWindow
 		this.labelID1.Name = "labelID1";
 		this.labelID1.LabelProp = global::Mono.Unix.Catalog.GetString ("ID");
 		this.vboxPostEdit.Add (this.labelID1);
-		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelID1]));
-		w28.Position = 0;
-		w28.Expand = false;
-		w28.Fill = false;
+		global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelID1]));
+		w30.Position = 0;
+		w30.Expand = false;
+		w30.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.entryPostEditID = new global::Gtk.Entry ();
 		this.entryPostEditID.CanFocus = true;
@@ -413,19 +443,19 @@ public partial class MainWindow
 		this.entryPostEditID.IsEditable = false;
 		this.entryPostEditID.InvisibleChar = '●';
 		this.vboxPostEdit.Add (this.entryPostEditID);
-		global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditID]));
-		w29.Position = 1;
-		w29.Expand = false;
-		w29.Fill = false;
+		global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditID]));
+		w31.Position = 1;
+		w31.Expand = false;
+		w31.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.labelAuthorID = new global::Gtk.Label ();
 		this.labelAuthorID.Name = "labelAuthorID";
 		this.labelAuthorID.LabelProp = global::Mono.Unix.Catalog.GetString ("Author ID");
 		this.vboxPostEdit.Add (this.labelAuthorID);
-		global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelAuthorID]));
-		w30.Position = 2;
-		w30.Expand = false;
-		w30.Fill = false;
+		global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelAuthorID]));
+		w32.Position = 2;
+		w32.Expand = false;
+		w32.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.entryPostEditAuthor = new global::Gtk.Entry ();
 		this.entryPostEditAuthor.CanFocus = true;
@@ -433,19 +463,19 @@ public partial class MainWindow
 		this.entryPostEditAuthor.IsEditable = true;
 		this.entryPostEditAuthor.InvisibleChar = '●';
 		this.vboxPostEdit.Add (this.entryPostEditAuthor);
-		global::Gtk.Box.BoxChild w31 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditAuthor]));
-		w31.Position = 3;
-		w31.Expand = false;
-		w31.Fill = false;
+		global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditAuthor]));
+		w33.Position = 3;
+		w33.Expand = false;
+		w33.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.labelPostEditTags = new global::Gtk.Label ();
 		this.labelPostEditTags.Name = "labelPostEditTags";
 		this.labelPostEditTags.LabelProp = global::Mono.Unix.Catalog.GetString ("Tags (comma-separated)");
 		this.vboxPostEdit.Add (this.labelPostEditTags);
-		global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelPostEditTags]));
-		w32.Position = 4;
-		w32.Expand = false;
-		w32.Fill = false;
+		global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelPostEditTags]));
+		w34.Position = 4;
+		w34.Expand = false;
+		w34.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.entryPostEditTags = new global::Gtk.Entry ();
 		this.entryPostEditTags.CanFocus = true;
@@ -453,19 +483,19 @@ public partial class MainWindow
 		this.entryPostEditTags.IsEditable = true;
 		this.entryPostEditTags.InvisibleChar = '●';
 		this.vboxPostEdit.Add (this.entryPostEditTags);
-		global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditTags]));
-		w33.Position = 5;
-		w33.Expand = false;
-		w33.Fill = false;
+		global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditTags]));
+		w35.Position = 5;
+		w35.Expand = false;
+		w35.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.labelTitle = new global::Gtk.Label ();
 		this.labelTitle.Name = "labelTitle";
 		this.labelTitle.LabelProp = global::Mono.Unix.Catalog.GetString ("Title");
 		this.vboxPostEdit.Add (this.labelTitle);
-		global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelTitle]));
-		w34.Position = 6;
-		w34.Expand = false;
-		w34.Fill = false;
+		global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelTitle]));
+		w36.Position = 6;
+		w36.Expand = false;
+		w36.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.entryPostEditTitle = new global::Gtk.Entry ();
 		this.entryPostEditTitle.CanFocus = true;
@@ -473,19 +503,19 @@ public partial class MainWindow
 		this.entryPostEditTitle.IsEditable = true;
 		this.entryPostEditTitle.InvisibleChar = '●';
 		this.vboxPostEdit.Add (this.entryPostEditTitle);
-		global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditTitle]));
-		w35.Position = 7;
-		w35.Expand = false;
-		w35.Fill = false;
+		global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.entryPostEditTitle]));
+		w37.Position = 7;
+		w37.Expand = false;
+		w37.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.labelText = new global::Gtk.Label ();
 		this.labelText.Name = "labelText";
 		this.labelText.LabelProp = global::Mono.Unix.Catalog.GetString ("Text");
 		this.vboxPostEdit.Add (this.labelText);
-		global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelText]));
-		w36.Position = 8;
-		w36.Expand = false;
-		w36.Fill = false;
+		global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.labelText]));
+		w38.Position = 8;
+		w38.Expand = false;
+		w38.Fill = false;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.GtkScrolledWindow3 = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow3.Name = "GtkScrolledWindow3";
@@ -496,8 +526,8 @@ public partial class MainWindow
 		this.textviewPostEditText.Name = "textviewPostEditText";
 		this.GtkScrolledWindow3.Add (this.textviewPostEditText);
 		this.vboxPostEdit.Add (this.GtkScrolledWindow3);
-		global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.GtkScrolledWindow3]));
-		w38.Position = 9;
+		global::Gtk.Box.BoxChild w40 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.GtkScrolledWindow3]));
+		w40.Position = 9;
 		// Container child vboxPostEdit.Gtk.Box+BoxChild
 		this.hbuttonboxPostEdit = new global::Gtk.HButtonBox ();
 		this.hbuttonboxPostEdit.Name = "hbuttonboxPostEdit";
@@ -509,9 +539,9 @@ public partial class MainWindow
 		this.buttonPostEditCancel.UseUnderline = true;
 		this.buttonPostEditCancel.Label = "gtk-cancel";
 		this.hbuttonboxPostEdit.Add (this.buttonPostEditCancel);
-		global::Gtk.ButtonBox.ButtonBoxChild w39 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPostEdit [this.buttonPostEditCancel]));
-		w39.Expand = false;
-		w39.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w41 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPostEdit [this.buttonPostEditCancel]));
+		w41.Expand = false;
+		w41.Fill = false;
 		// Container child hbuttonboxPostEdit.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonPostEditOK = new global::Gtk.Button ();
 		this.buttonPostEditOK.CanFocus = true;
@@ -520,21 +550,21 @@ public partial class MainWindow
 		this.buttonPostEditOK.UseUnderline = true;
 		this.buttonPostEditOK.Label = "gtk-ok";
 		this.hbuttonboxPostEdit.Add (this.buttonPostEditOK);
-		global::Gtk.ButtonBox.ButtonBoxChild w40 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPostEdit [this.buttonPostEditOK]));
-		w40.Position = 1;
-		w40.Expand = false;
-		w40.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w42 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxPostEdit [this.buttonPostEditOK]));
+		w42.Position = 1;
+		w42.Expand = false;
+		w42.Fill = false;
 		this.vboxPostEdit.Add (this.hbuttonboxPostEdit);
-		global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.hbuttonboxPostEdit]));
-		w41.Position = 10;
-		w41.Expand = false;
-		w41.Fill = false;
+		global::Gtk.Box.BoxChild w43 = ((global::Gtk.Box.BoxChild)(this.vboxPostEdit [this.hbuttonboxPostEdit]));
+		w43.Position = 10;
+		w43.Expand = false;
+		w43.Fill = false;
 		this.vboxPosts.Add (this.vboxPostEdit);
-		global::Gtk.Box.BoxChild w42 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.vboxPostEdit]));
-		w42.Position = 3;
+		global::Gtk.Box.BoxChild w44 = ((global::Gtk.Box.BoxChild)(this.vboxPosts [this.vboxPostEdit]));
+		w44.Position = 3;
 		this.hbox1.Add (this.vboxPosts);
-		global::Gtk.Box.BoxChild w43 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vboxPosts]));
-		w43.Position = 1;
+		global::Gtk.Box.BoxChild w45 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vboxPosts]));
+		w45.Position = 1;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.vboxTags = new global::Gtk.VBox ();
 		this.vboxTags.Name = "vboxTags";
@@ -544,10 +574,10 @@ public partial class MainWindow
 		this.labelTags.Name = "labelTags";
 		this.labelTags.LabelProp = global::Mono.Unix.Catalog.GetString ("Tags");
 		this.vboxTags.Add (this.labelTags);
-		global::Gtk.Box.BoxChild w44 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.labelTags]));
-		w44.Position = 0;
-		w44.Expand = false;
-		w44.Fill = false;
+		global::Gtk.Box.BoxChild w46 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.labelTags]));
+		w46.Position = 0;
+		w46.Expand = false;
+		w46.Fill = false;
 		// Container child vboxTags.Gtk.Box+BoxChild
 		this.GtkScrolledWindow2 = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
@@ -558,8 +588,8 @@ public partial class MainWindow
 		this.nodeviewTags.Name = "nodeviewTags";
 		this.GtkScrolledWindow2.Add (this.nodeviewTags);
 		this.vboxTags.Add (this.GtkScrolledWindow2);
-		global::Gtk.Box.BoxChild w46 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.GtkScrolledWindow2]));
-		w46.Position = 1;
+		global::Gtk.Box.BoxChild w48 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.GtkScrolledWindow2]));
+		w48.Position = 1;
 		// Container child vboxTags.Gtk.Box+BoxChild
 		this.hbuttonboxTags = new global::Gtk.HButtonBox ();
 		this.hbuttonboxTags.Name = "hbuttonboxTags";
@@ -571,9 +601,9 @@ public partial class MainWindow
 		this.buttonTagAdd.UseUnderline = true;
 		this.buttonTagAdd.Label = "gtk-add";
 		this.hbuttonboxTags.Add (this.buttonTagAdd);
-		global::Gtk.ButtonBox.ButtonBoxChild w47 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagAdd]));
-		w47.Expand = false;
-		w47.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w49 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagAdd]));
+		w49.Expand = false;
+		w49.Fill = false;
 		// Container child hbuttonboxTags.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonTagEdit = new global::Gtk.Button ();
 		this.buttonTagEdit.CanFocus = true;
@@ -582,15 +612,27 @@ public partial class MainWindow
 		this.buttonTagEdit.UseUnderline = true;
 		this.buttonTagEdit.Label = "gtk-edit";
 		this.hbuttonboxTags.Add (this.buttonTagEdit);
-		global::Gtk.ButtonBox.ButtonBoxChild w48 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagEdit]));
-		w48.Position = 1;
-		w48.Expand = false;
-		w48.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w50 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagEdit]));
+		w50.Position = 1;
+		w50.Expand = false;
+		w50.Fill = false;
+		// Container child hbuttonboxTags.Gtk.ButtonBox+ButtonBoxChild
+		this.buttonTagDelete = new global::Gtk.Button ();
+		this.buttonTagDelete.CanFocus = true;
+		this.buttonTagDelete.Name = "buttonTagDelete";
+		this.buttonTagDelete.UseStock = true;
+		this.buttonTagDelete.UseUnderline = true;
+		this.buttonTagDelete.Label = "gtk-delete";
+		this.hbuttonboxTags.Add (this.buttonTagDelete);
+		global::Gtk.ButtonBox.ButtonBoxChild w51 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTags [this.buttonTagDelete]));
+		w51.Position = 2;
+		w51.Expand = false;
+		w51.Fill = false;
 		this.vboxTags.Add (this.hbuttonboxTags);
-		global::Gtk.Box.BoxChild w49 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.hbuttonboxTags]));
-		w49.Position = 2;
-		w49.Expand = false;
-		w49.Fill = false;
+		global::Gtk.Box.BoxChild w52 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.hbuttonboxTags]));
+		w52.Position = 2;
+		w52.Expand = false;
+		w52.Fill = false;
 		// Container child vboxTags.Gtk.Box+BoxChild
 		this.vboxTagEdit = new global::Gtk.VBox ();
 		this.vboxTagEdit.Name = "vboxTagEdit";
@@ -600,10 +642,10 @@ public partial class MainWindow
 		this.labelID2.Name = "labelID2";
 		this.labelID2.LabelProp = global::Mono.Unix.Catalog.GetString ("ID");
 		this.vboxTagEdit.Add (this.labelID2);
-		global::Gtk.Box.BoxChild w50 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.labelID2]));
-		w50.Position = 0;
-		w50.Expand = false;
-		w50.Fill = false;
+		global::Gtk.Box.BoxChild w53 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.labelID2]));
+		w53.Position = 0;
+		w53.Expand = false;
+		w53.Fill = false;
 		// Container child vboxTagEdit.Gtk.Box+BoxChild
 		this.entryTagEditID = new global::Gtk.Entry ();
 		this.entryTagEditID.CanFocus = true;
@@ -611,19 +653,19 @@ public partial class MainWindow
 		this.entryTagEditID.IsEditable = false;
 		this.entryTagEditID.InvisibleChar = '●';
 		this.vboxTagEdit.Add (this.entryTagEditID);
-		global::Gtk.Box.BoxChild w51 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.entryTagEditID]));
-		w51.Position = 1;
-		w51.Expand = false;
-		w51.Fill = false;
+		global::Gtk.Box.BoxChild w54 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.entryTagEditID]));
+		w54.Position = 1;
+		w54.Expand = false;
+		w54.Fill = false;
 		// Container child vboxTagEdit.Gtk.Box+BoxChild
 		this.labelTitle1 = new global::Gtk.Label ();
 		this.labelTitle1.Name = "labelTitle1";
 		this.labelTitle1.LabelProp = global::Mono.Unix.Catalog.GetString ("Title");
 		this.vboxTagEdit.Add (this.labelTitle1);
-		global::Gtk.Box.BoxChild w52 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.labelTitle1]));
-		w52.Position = 2;
-		w52.Expand = false;
-		w52.Fill = false;
+		global::Gtk.Box.BoxChild w55 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.labelTitle1]));
+		w55.Position = 2;
+		w55.Expand = false;
+		w55.Fill = false;
 		// Container child vboxTagEdit.Gtk.Box+BoxChild
 		this.entryTagEditTitle = new global::Gtk.Entry ();
 		this.entryTagEditTitle.CanFocus = true;
@@ -631,10 +673,10 @@ public partial class MainWindow
 		this.entryTagEditTitle.IsEditable = true;
 		this.entryTagEditTitle.InvisibleChar = '●';
 		this.vboxTagEdit.Add (this.entryTagEditTitle);
-		global::Gtk.Box.BoxChild w53 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.entryTagEditTitle]));
-		w53.Position = 3;
-		w53.Expand = false;
-		w53.Fill = false;
+		global::Gtk.Box.BoxChild w56 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.entryTagEditTitle]));
+		w56.Position = 3;
+		w56.Expand = false;
+		w56.Fill = false;
 		// Container child vboxTagEdit.Gtk.Box+BoxChild
 		this.hbuttonboxTagEdit = new global::Gtk.HButtonBox ();
 		this.hbuttonboxTagEdit.Name = "hbuttonboxTagEdit";
@@ -646,9 +688,9 @@ public partial class MainWindow
 		this.buttonTagEditCancel.UseUnderline = true;
 		this.buttonTagEditCancel.Label = "gtk-cancel";
 		this.hbuttonboxTagEdit.Add (this.buttonTagEditCancel);
-		global::Gtk.ButtonBox.ButtonBoxChild w54 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTagEdit [this.buttonTagEditCancel]));
-		w54.Expand = false;
-		w54.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w57 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTagEdit [this.buttonTagEditCancel]));
+		w57.Expand = false;
+		w57.Fill = false;
 		// Container child hbuttonboxTagEdit.Gtk.ButtonBox+ButtonBoxChild
 		this.buttonTagEditOK = new global::Gtk.Button ();
 		this.buttonTagEditOK.CanFocus = true;
@@ -657,26 +699,26 @@ public partial class MainWindow
 		this.buttonTagEditOK.UseUnderline = true;
 		this.buttonTagEditOK.Label = "gtk-ok";
 		this.hbuttonboxTagEdit.Add (this.buttonTagEditOK);
-		global::Gtk.ButtonBox.ButtonBoxChild w55 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTagEdit [this.buttonTagEditOK]));
-		w55.Position = 1;
-		w55.Expand = false;
-		w55.Fill = false;
+		global::Gtk.ButtonBox.ButtonBoxChild w58 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonboxTagEdit [this.buttonTagEditOK]));
+		w58.Position = 1;
+		w58.Expand = false;
+		w58.Fill = false;
 		this.vboxTagEdit.Add (this.hbuttonboxTagEdit);
-		global::Gtk.Box.BoxChild w56 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.hbuttonboxTagEdit]));
-		w56.Position = 4;
-		w56.Expand = false;
-		w56.Fill = false;
+		global::Gtk.Box.BoxChild w59 = ((global::Gtk.Box.BoxChild)(this.vboxTagEdit [this.hbuttonboxTagEdit]));
+		w59.Position = 4;
+		w59.Expand = false;
+		w59.Fill = false;
 		this.vboxTags.Add (this.vboxTagEdit);
-		global::Gtk.Box.BoxChild w57 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.vboxTagEdit]));
-		w57.Position = 3;
-		w57.Expand = false;
-		w57.Fill = false;
+		global::Gtk.Box.BoxChild w60 = ((global::Gtk.Box.BoxChild)(this.vboxTags [this.vboxTagEdit]));
+		w60.Position = 3;
+		w60.Expand = false;
+		w60.Fill = false;
 		this.hbox1.Add (this.vboxTags);
-		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vboxTags]));
-		w58.Position = 2;
+		global::Gtk.Box.BoxChild w61 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.vboxTags]));
+		w61.Position = 2;
 		this.vboxMain.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w59 = ((global::Gtk.Box.BoxChild)(this.vboxMain [this.hbox1]));
-		w59.Position = 1;
+		global::Gtk.Box.BoxChild w62 = ((global::Gtk.Box.BoxChild)(this.vboxMain [this.hbox1]));
+		w62.Position = 1;
 		this.Add (this.vboxMain);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
@@ -691,14 +733,17 @@ public partial class MainWindow
 		this.buttonUpdate.Clicked += new global::System.EventHandler (this.OnButtonUpdateClicked);
 		this.buttonUserAdd.Clicked += new global::System.EventHandler (this.OnButtonUserAddClicked);
 		this.buttonUserEdit.Clicked += new global::System.EventHandler (this.OnButtonUserEditClicked);
+		this.buttonUserDelete.Clicked += new global::System.EventHandler (this.OnButtonUserDeleteClicked);
 		this.buttonUserEditCancel.Clicked += new global::System.EventHandler (this.OnButtonUserEditCancelClicked);
 		this.buttonUserEditOK.Clicked += new global::System.EventHandler (this.OnButtonUserEditOKClicked);
 		this.buttonPostAdd.Clicked += new global::System.EventHandler (this.OnButtonPostAddClicked);
 		this.buttonPostEdit.Clicked += new global::System.EventHandler (this.OnButtonPostEditClicked);
+		this.buttonPostDelete.Clicked += new global::System.EventHandler (this.OnButtonPostDeleteClicked);
 		this.buttonPostEditCancel.Clicked += new global::System.EventHandler (this.OnButtonPostEditCancelClicked);
 		this.buttonPostEditOK.Clicked += new global::System.EventHandler (this.OnButtonPostEditOKClicked);
 		this.buttonTagAdd.Clicked += new global::System.EventHandler (this.OnButtonTagAddClicked);
 		this.buttonTagEdit.Clicked += new global::System.EventHandler (this.OnButtonTagEditClicked);
+		this.buttonTagDelete.Clicked += new global::System.EventHandler (this.OnButtonTagDeleteClicked);
 		this.buttonTagEditCancel.Clicked += new global::System.EventHandler (this.OnButtonTagEditCancelClicked);
 		this.buttonTagEditOK.Clicked += new global::System.EventHandler (this.OnButtonTagEditOKClicked);
 	}
